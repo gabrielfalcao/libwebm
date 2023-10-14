@@ -55,7 +55,7 @@ class MuxerTest : public testing::Test {
     ASSERT_TRUE(temp_file_.get() != nullptr);
     writer_.reset(new MkvWriter(temp_file_.get()));
     is_writer_open_ = true;
-    memset(dummy_data_, 0, kFrameLength);
+    bzero(dummy_data_, kFrameLength);
   }
 
   void AddDummyFrameAndFinalize(int track_number) {

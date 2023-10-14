@@ -40,7 +40,7 @@ class ParserTest : public testing::Test {
  public:
   ParserTest() : is_reader_open_(false), segment_(NULL) {
     memset(dummy_data_, -1, kFrameLength);
-    memset(gold_frame_, 0, kFrameLength);
+    bzero(gold_frame_, kFrameLength);
   }
 
   virtual ~ParserTest() {
